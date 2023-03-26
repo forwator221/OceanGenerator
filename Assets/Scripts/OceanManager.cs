@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class OceanManager : MonoBehaviour
 {
-
+    // Wave params
     public float waveHeight =1f;
-
     public float waveScale = 1f;
-
     public float waveSpeed = 1f;
+
+    //Foam params
+    public float foamAmount = 2.78f;
+    public float foamCutOff = 2.35f;
+    public float foamScale = 20000;
+    public float foamSpeed = 0.0001f;
+
 
     public Transform ocean;
 
@@ -46,5 +51,9 @@ public class OceanManager : MonoBehaviour
         oceanMaterial.SetFloat("_WaveScale", waveScale/100);
         oceanMaterial.SetFloat("_WaveSpeed", waveSpeed/100);
         oceanMaterial.SetFloat("_WaveHeight", waveHeight/100);
+        oceanMaterial.SetFloat("_FoamAmount", foamAmount);
+        oceanMaterial.SetFloat("_FoamCutOff", foamCutOff);
+        oceanMaterial.SetFloat("_FoamScale", foamScale);
+        oceanMaterial.SetFloat("_FoamSpeed", foamSpeed);
     }
 }
